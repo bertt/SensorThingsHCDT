@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src=" http://sdk.sensorup.com/sensorthings-hcdt/v0.1/sensorthings-hcdt.js"></script>
+<div id="chart-container" style="height: 400px; width: 100%; margin: auto;"></div>
+
+
+<script lang="javascript">
+$(function() {
+  var sensorthingsHCDT = new SensorthingsHCDT('http://example.sensorup.com', {
+    'dataStreamId': [4207]
+  });
+  var request = sensorthingsHCDT.request();
+  if (request.status == 'success') {
+    sensorthingsHCDT.chart('chart-container', request);
+  }
+});
+
+</script>
+</body>
+</html>
