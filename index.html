@@ -13,8 +13,8 @@
 
 <script lang="javascript">
 $(function() {
-  var sensorthingsHCDT = new SensorthingsHCDT('http://gost.geodan.nl', {
-    'dataStreamId': [52]
+  var sensorthingsHCDT = new SensorthingsHCDT('http://localhost:8080', {
+    'dataStreamId': [1]
   });
   var request = sensorthingsHCDT.request();
   if (request.status == 'success') {
